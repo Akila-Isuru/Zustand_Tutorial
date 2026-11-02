@@ -5,6 +5,7 @@ import App from "./components/flatUpdates.tsx";
 import MultipleSelectors from "./components/multipleSelectors.tsx";
 import DerivedStateWithSelectors from "./components/DerivedStateWithSelectors.tsx";
 import AsyncActions from "./components/AsyncActions.tsx";
+import Counter from "./components/Counter.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -12,6 +13,7 @@ createRoot(document.getElementById("root")!).render(
     {/* <App /> */}
     {/* <MultipleSelectors /> */}
     {/* <DerivedStateWithSelectors /> */}
-    <AsyncActions />
+    {/* <AsyncActions /> */}
+    <Counter />
   </StrictMode>,
 );
