@@ -4,12 +4,14 @@ import "./index.css";
 import App from "./components/flatUpdates.tsx";
 import MultipleSelectors from "./components/multipleSelectors.tsx";
 import DerivedStateWithSelectors from "./components/DerivedStateWithSelectors.tsx";
+import AsyncActions from "./components/AsyncActions.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* <App /> */}
     {/* <App /> */}
     {/* <MultipleSelectors /> */}
-    <DerivedStateWithSelectors />
+    {/* <DerivedStateWithSelectors /> */}
+    <AsyncActions />
   </StrictMode>,
 );
