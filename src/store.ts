@@ -1,27 +1,19 @@
 import { create } from "zustand";
 
-type counterStore = {
+type CounterState = {
   count: number;
-  increment: () => void;
-  incrementAsync: () => Promise<void>;
-  decrementAsync: () => Promise<void>;
-  decrement: () => void;
+  text: string;
+  increase: () => void;
+  decrease: () => void;
+  setText: (newText: string) => void;
+  reset: () => void;
 };
 
-export const useCounterStore = create<counterStore>((set) => ({
+export const useCounterStore = create<CounterState>((set) => ({
   count: 0,
-  increment: () => {
-    set((state) => ({ count: state.count + 1 }));
-  },
-  incrementAsync: async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    set((state) => ({ count: state.count + 1 }));
-  },
-  decrementAsync: async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    set((state) => ({ count: state.count - 1 }));
-  },
-  decrement: () => {
-    set((state) => ({ count: state.count - 1 }));
-  },
+  text: "Hello zustand",
+  increase: () => set((state) => ({ count: state.count + 1 })),
+  decrease: () => set((state) => ({ count: state.count - 1 })),
+  setText: (newText) => set({ text: newText }),
+  reset: () => set({ count: 0, text: "Hello Zustand " }),
 }));
